@@ -17,4 +17,18 @@ Rails.application.routes.draw do
   patch '/posts/:id', to: 'posts#update'
 
   delete '/posts/:id', to: 'posts#delete', as: 'delete_post'
+
+
+  get '/author/new', to: 'author#new', as: 'new_author'
+  post '/author', to: 'author#create', as: 'authors'
+
+  get '/author', to: 'author#index', as: 'author_index'
+  get '/author/:id', to: 'author#show', as: 'author'
+
+  get '/authorts/:id/edit', to: 'author#edit', as: 'edit_author'
+  patch '/author/:id', to: 'author#update'
+
+  delete '/author/:id', to: 'author#delete', as: 'delete_author'
+
+
 end

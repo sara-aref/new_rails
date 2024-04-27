@@ -1,14 +1,14 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all
+    @posts = Posts.all
   end
 
   def new
-    @post = Post.new
+    @post = Posts.new
   end
 
   def create
-    @post = Post.new({title: params[:post][:title], content: params[:post][:content]})
+    @post = Posts.new({title: params[:post][:title], content: params[:post][:content]})
 
     if @post.save
       redirect_to posts_url(@post)
@@ -18,15 +18,15 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
+    @post = Posts.find(params[:id])
   end
 
   def edit
-    @post = Post.find(params[:id])
+    @post = Posts.find(params[:id])
   end
 
   def update
-    @post = Post.find(params[:id])
+    @post = Posts.find(params[:id])
 
     if @post.update({title: params[:post][:title], content: params[:post][:content]})
       redirect_to post_url(@post)
@@ -35,7 +35,7 @@ class PostsController < ApplicationController
   end
 
   def delete
-    @post = Post.find(params[:id])
+    @post = Posts.find(params[:id])
 
     @post.destroy
 

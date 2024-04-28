@@ -8,7 +8,7 @@ class AuthorController < ApplicationController
     end
   
     def create
-      @author = Author.new({name: params[:post][:name], DOB: params[:post][:DOB], email: params[:post][:email], phone_number: params[:post][:phone_number]})
+      @author = Author.new({name: params[:author][:name], DOB: params[:author][:DOB], email: params[:author][:email], phone_number: params[:author][:phone_number]})
   
       if @author.save
         redirect_to posts_url(@author)
@@ -28,7 +28,7 @@ class AuthorController < ApplicationController
     def update
       @author = Author.find(params[:id])
   
-      if @author.update({name: params[:post][:name], DOB: params[:post][:DOB], email: params[:post][:email], phone_number: params[:post][:phone_number]})
+      if @author.update({name: params[:author][:name], DOB: params[:author][:DOB], email: params[:author][:email], phone_number: params[:author][:phone_number]})
         redirect_to post_url(@author)
       else
         render :new, status: 422

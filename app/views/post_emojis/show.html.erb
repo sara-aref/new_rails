@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @post_emoji %>
+
+<div>
+  <%= link_to "Edit this post emoji", edit_post_emoji_path(@post_emoji) %> |
+  <%= link_to "Back to post emojis", post_emojis_path %>
+
+  <%= button_to "Destroy this post emoji", @post_emoji, method: :delete %>
+</div>

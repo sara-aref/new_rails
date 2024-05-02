@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Post emojis</h1>
+
+<div id="post_emojis">
+  <% @post_emojis.each do |post_emoji| %>
+    <%= render post_emoji %>
+    <p>
+      <%= link_to "Show this post emoji", post_emoji %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New post emoji", new_post_emoji_path %>
